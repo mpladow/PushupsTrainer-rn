@@ -28,16 +28,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="AdventureStackLayout"
-        options={{
-          title: 'Adventure',
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="CharacterStackLayout"
+        name="(character)"
         options={{
           title: 'Character',
           tabBarIcon: ({ color }) => (
@@ -46,7 +37,16 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="JournalStackLayout"
+        name="(adventure)"
+        options={{
+          title: 'Adventure',
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="paperplane.fill" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="(journal)"
         options={{
           title: 'Journal',
           tabBarIcon: ({ color }) => (

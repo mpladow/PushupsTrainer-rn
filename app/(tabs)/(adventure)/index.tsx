@@ -1,14 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-const index = () => {
+const AdventureHome = () => {
   return (
     <View>
-      <Text>HELLO</Text>
+      <Text>Training</Text>
+      <Text>Adventure</Text>
     </View>
   );
 };
 
-export default index;
+export default AdventureHome;
 
 const styles = StyleSheet.create({});
