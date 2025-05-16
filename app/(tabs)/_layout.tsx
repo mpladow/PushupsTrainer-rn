@@ -27,17 +27,8 @@ export default function TabLayout() {
         }),
       }}
     >
-      {/* <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="house.fill" color={color} />
-          ),
-        }}
-      /> */}
       <Tabs.Screen
-        name="Adventure"
+        name="AdventureStackLayout"
         options={{
           title: 'Adventure',
           tabBarIcon: ({ color }) => (
@@ -46,7 +37,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="Character"
+        name="CharacterStackLayout"
         options={{
           title: 'Character',
           tabBarIcon: ({ color }) => (
@@ -55,7 +46,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="Journal"
+        name="JournalStackLayout"
         options={{
           title: 'Journal',
           tabBarIcon: ({ color }) => (
