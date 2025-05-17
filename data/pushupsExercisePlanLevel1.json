@@ -1,0 +1,84 @@
+[
+  {
+    "level": 1,
+    "day": 1,
+    "exercises": [
+      {
+        "exercise": {
+          "exerciseId": 1,
+          "name": "Pushups"
+        },
+        "goalCount": 2
+      },
+      {
+        "exercise": {
+          "exerciseId": 1,
+          "name": "Pushups"
+        },
+        "goalCount": 3
+      },
+      {
+        "exercise": {
+          "exerciseId": 1,
+          "name": "Pushups"
+        },
+        "goalCount": 4
+      },
+      {
+        "exercise": {
+          "exerciseId": 1,
+          "name": "Pushups"
+        },
+        "goalCount": 3
+      },
+      {
+        "exercise": {
+          "exerciseId": 1,
+          "name": "Pushups"
+        },
+        "goalCount": 2
+      }
+    ]
+  },
+  {
+    "level": 1,
+    "day": 2,
+    "exercises": [
+      {
+        "exercise": {
+          "exerciseId": 1,
+          "name": "Pushups"
+        },
+        "goalCount": 3
+      },
+      {
+        "exercise": {
+          "exerciseId": 1,
+          "name": "Pushups"
+        },
+        "goalCount": 4
+      },
+      {
+        "exercise": {
+          "exerciseId": 1,
+          "name": "Pushups"
+        },
+        "goalCount": 4
+      },
+      {
+        "exercise": {
+          "exerciseId": 1,
+          "name": "Pushups"
+        },
+        "goalCount": 3
+      },
+      {
+        "exercise": {
+          "exerciseId": 1,
+          "name": "Pushups"
+        },
+        "goalCount": 2
+      }
+    ]
+  }
+]

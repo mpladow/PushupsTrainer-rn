@@ -1,8 +1,3 @@
-import {
-	DarkTheme,
-	DefaultTheme,
-	ThemeProvider,
-} from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
@@ -11,7 +6,9 @@ import { Provider } from 'react-redux';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { store } from '@/state/character/state';
-
+import { Colors } from '@/theme/Colors';
+import { createTheme, ThemeProvider } from '@rneui/themed';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
@@ -23,15 +20,37 @@ export default function RootLayout() {
     return null;
   }
 
+  const theme = createTheme({
+    lightColors: {
+      primary: '#33658A',
+      secondary: '#331E36',
+      background: '#ffffff',
+      black: '#000000',
+      white: '#ffffff',
+      grey0: '#D3D3D3',
+      grey1: '##878787',
+      grey2: '##363636',
+      greyOutline: '#878787',
+      searchBg: '#D3D3D3',
+      success: '#758E4F',
+      warning: '#F6AE2D',
+      error: '#F26419',
+      textLight: '#ffffff',
+      textDark: '#000000',
+    } as Colors,
+  });
+
   return (
-    <Provider store={store}>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack initialRouteName='(tabs)'>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-        <StatusBar style="auto" />
-      </ThemeProvider>
-    </Provider>
+    <SafeAreaProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <Stack initialRouteName="(tabs)">
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen name="+not-found" />
+          </Stack>
+          <StatusBar style="auto" />
+        </ThemeProvider>
+      </Provider>
+    </SafeAreaProvider>
   );
 }
