@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 const CharacterStackLayout = () => {
   return (
     <Stack>
-      <Stack.Screen name="Adventure" options={{ headerShown: false }} />
+      <Stack.Screen name="index" options={{ headerShown: false }} />
     </Stack>
   );
 };
