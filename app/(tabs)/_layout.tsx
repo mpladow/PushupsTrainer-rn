@@ -6,6 +6,7 @@ import { HapticTab } from '@/components/HapticTab';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { useTheme } from '@rneui/themed';
+import { BlurView } from 'expo-blur';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -20,7 +21,7 @@ export default function TabLayout() {
         tabBarButton: HapticTab,
         tabBarActiveBackgroundColor: theme.colors.background,
         tabBarInactiveBackgroundColor: theme.colors.background,
-
+        tabBarBackground: () => <BlurView />,
         tabBarStyle: Platform.select({
           ios: {
             // Use a transparent background on iOS to show the blur effect
@@ -28,22 +29,21 @@ export default function TabLayout() {
           },
           default: {},
         }),
-		  
       }}
     >
       <Tabs.Screen
-        name="(character)"
+        name="(adventure)"
         options={{
-          title: 'Character',
+          title: 'Adventure',
           tabBarIcon: ({ color }) => (
             <IconSymbol size={28} name="paperplane.fill" color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="(adventure)"
+        name="(character)"
         options={{
-          title: 'Adventure',
+          title: 'Character',
           tabBarIcon: ({ color }) => (
             <IconSymbol size={28} name="paperplane.fill" color={color} />
           ),

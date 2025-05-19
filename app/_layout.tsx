@@ -54,7 +54,7 @@ export default function RootLayout() {
       error: '#F26419',
       textLight: '#000000',
       textDark: '#ffffff',
-    },
+    } as Colors,
     mode: 'dark',
   });
 
