@@ -38,6 +38,24 @@ export default function RootLayout() {
       textLight: '#ffffff',
       textDark: '#000000',
     } as Colors,
+    darkColors: {
+      primary: '#33658A',
+      secondary: '#331E36',
+      background: '#363636',
+      black: '#000000',
+      white: '#161111',
+      grey0: '#adadad',
+      grey1: '#616161',
+      grey2: '#1d1d1d',
+      greyOutline: '#878787',
+      searchBg: '#D3D3D3',
+      success: '#758E4F',
+      warning: '#F6AE2D',
+      error: '#F26419',
+      textLight: '#000000',
+      textDark: '#ffffff',
+    },
+    mode: 'dark',
   });
 
   return (

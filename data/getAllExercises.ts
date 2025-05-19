@@ -49,7 +49,7 @@ export const getAllExercises = async () => {
 	return new Promise<ExerciseDay[]>((resolve, reject) => {
 		setTimeout(() => {
 			resolve([exerciseGoal1, exerciseGoal2])
-		}, 500)
+		}, 0)
 	});
 }
 

@@ -6,7 +6,13 @@ export type ThemedTextProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
   inverted?: boolean;
-  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
+  type?:
+    | 'micro'
+    | 'default'
+    | 'title'
+    | 'defaultSemiBold'
+    | 'subtitle'
+    | 'link';
 };
 
 export function ThemedText({
@@ -29,6 +35,7 @@ export function ThemedText({
         type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
         type === 'subtitle' ? styles.subtitle : undefined,
         type === 'link' ? styles.link : undefined,
+        type === 'micro' ? styles.microText : undefined,
         style,
       ]}
       {...rest}
@@ -37,6 +44,10 @@ export function ThemedText({
 }
 
 const styles = StyleSheet.create({
+  microText: {
+    fontSize: 12,
+    lineHeight: 24,
+  },
   default: {
     fontSize: 16,
     lineHeight: 24,
