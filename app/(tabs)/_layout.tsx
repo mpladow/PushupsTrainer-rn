@@ -3,8 +3,8 @@ import React from 'react';
 import { Platform } from 'react-native';
 
 import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { Icon } from '@rneui/base';
 import { useTheme } from '@rneui/themed';
 import { BlurView } from 'expo-blur';
 
@@ -36,16 +36,12 @@ export default function TabLayout() {
         options={{
           title: 'Adventure',
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="(character)"
-        options={{
-          title: 'Character',
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color={color} />
+            // <IconSymbol size={28} name="paperplane.fill" color={color} />
+            <Icon
+              type="material-community"
+              name={'sword-cross'}
+              color={color}
+            />
           ),
         }}
       />
@@ -54,7 +50,7 @@ export default function TabLayout() {
         options={{
           title: 'Journal',
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color={color} />
+            <Icon type="evilicon" name={'pencil'} color={color} />
           ),
         }}
       />

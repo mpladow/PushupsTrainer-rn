@@ -2,38 +2,33 @@ import { Exercise } from '@/models/schema/Exercise';
 import { ExerciseDay } from '@/models/schema/ExerciseDay';
 import { ExerciseRepGoal } from '@/models/schema/ExerciseRepGoal';
 import { useEffect, useState } from 'react';
+import { ExercisePlan, getAllExercises } from './helpers/exerciseHelpers';
 
 
-export const exercise: Exercise = {
+export const pushupsExercise: Exercise = {
 	exerciseId: 1,
 	name: 'Pushups'
 }
-export const exerciseRepGoal8: ExerciseRepGoal = {
-	exercise: exercise,
-	goalCount: 8
-}
-export const exerciseRepGoal7: ExerciseRepGoal = {
-	exercise: exercise,
-	goalCount: 7
-}
-export const exerciseRepGoal9: ExerciseRepGoal = {
-	exercise: exercise,
-	goalCount: 9
+export const exerciseRepGoal3: ExerciseRepGoal = {
+	exercise: pushupsExercise,
+	goalCount: 3,
 }
 export const exerciseRepGoal4: ExerciseRepGoal = {
-	exercise: exercise,
-	goalCount: 14
+	exercise: pushupsExercise,
+	goalCount: 4,
 }
-export const exerciseRepGoal5: ExerciseRepGoal = {
-	exercise: exercise,
-	goalCount: 15
+export const exerciseRepGoa7: ExerciseRepGoal = {
+	exercise: pushupsExercise,
+	goalCount: 7,
+
 }
+
 export const exerciseGoal1: ExerciseDay = {
 	exerciseId: '',
 	level: 0,
 	day: 0,
 	exercises: [
-		exerciseRepGoal8, exerciseRepGoal7, exerciseRepGoal9, exerciseRepGoal4, exerciseRepGoal5
+		exerciseRepGoal4, exerciseRepGoa7
 	]
 }
 export const exerciseGoal2: ExerciseDay = {
@@ -41,33 +36,32 @@ export const exerciseGoal2: ExerciseDay = {
 	level: 0,
 	day: 1,
 	exercises: [
-		exerciseRepGoal7, exerciseRepGoal8, exerciseRepGoal8, exerciseRepGoal4, exerciseRepGoal5
+		exerciseRepGoa7, exerciseRepGoa7, exerciseRepGoal4, exerciseRepGoa7
 
 	]
 }
-export const getAllExercises = async () => {
-	return new Promise<ExerciseDay[]>((resolve, reject) => {
-		setTimeout(() => {
-			resolve([exerciseGoal1, exerciseGoal2, exerciseGoal2, exerciseGoal2, exerciseGoal2, exerciseGoal2, exerciseGoal2, exerciseGoal2, exerciseGoal2, exerciseGoal2, exerciseGoal2, exerciseGoal2, exerciseGoal2, exerciseGoal2])
-		}, 0)
-	});
-}
+
+
+
+
 
 // this mocks an api call that will generate the user's exercises
 export const useExercisesApi = () => {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string>()
-	const [data, setData] = useState<ExerciseDay[]>()
+	const [data, setData] = useState<ExercisePlan[]>()
 	useEffect(() => {
 		getInitialData();
 	}, [])
 
 	const getInitialData = async () => {
 		setLoading(true);
-		const result = getAllExercises().then((res) => {
+		getAllExercises().then((res) => {
+			console.log("🚀 ~ getAllExercises ~ res:", res)
 			setData(res)
 
 		}).catch((err) => {
+			console.log("🚀 ~ getAllExercises ~ err:", err)
 			setError(err)
 
 		}).finally(() => {

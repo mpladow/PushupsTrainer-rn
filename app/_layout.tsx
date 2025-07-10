@@ -56,6 +56,13 @@ export default function RootLayout() {
       textDark: '#ffffff',
     } as Colors,
     mode: 'dark',
+	 spacing: {
+		xs: 4,
+		sm: 8,
+		md: 12,
+		lg: 16,
+		xl: 24,
+	 }
   });
 
   return (

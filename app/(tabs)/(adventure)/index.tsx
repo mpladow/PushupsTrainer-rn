@@ -1,4 +1,3 @@
-import ExerciseDayListItem from '@/components/Adventure/ExerciseDayListItem/ExerciseDayListItem';
 import { ThemedText } from '@/components/ThemedText';
 import { useExercisesApi } from '@/data/getAllExercises';
 import { ExerciseDay } from '@/models/schema/ExerciseDay';
@@ -11,13 +10,13 @@ import { useRouter } from 'expo-router';
 import React from 'react';
 import {
 	Dimensions,
-	FlatList,
-	Pressable,
 	StyleSheet,
-	View,
+	View
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useDispatch } from 'react-redux';
+
+
 
 const AdventureHome = () => {
   // get all exercises for user-
@@ -38,9 +37,6 @@ const AdventureHome = () => {
     });
     return total;
   };
-  //   const handleModeToggle = () => {
-  //     mode == 'light' ? setMode('dark') : setMode('light');
-  //   };
 
   const handleExerciseDayPress = (exerciseDay: ExerciseDay) => {
     dispatch(setExercise(exerciseDay));
@@ -58,8 +54,10 @@ const AdventureHome = () => {
       {loading ? (
         <ThemedText>Loading...</ThemedText>
       ) : (
-        <View style={{ height: Dimensions.get('screen').height - 150 }}>
-          <FlatList
+        <View style={{ height: Dimensions.get('screen').height - 100 }}>
+          <ThemedText h1>Workout Summary</ThemedText>
+          <ThemedText>Begin training!</ThemedText>
+          {/* <FlatList
             data={data}
             contentContainerStyle={{
               backgroundColor: theme.colors.grey1,
@@ -90,7 +88,7 @@ const AdventureHome = () => {
                 />
               </Pressable>
             )}
-          />
+          /> */}
           <BlurView />
         </View>
       )}

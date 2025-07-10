@@ -53,7 +53,6 @@ const pushupsScreen = () => {
   }, [countdownTimer]);
 
   const proximity = useProximity();
-  console.log('🚀 ~ pushupsScreen ~ proximity:', proximity);
 
   const [pushupCompleted, setPushupCompleted] = useState(false);
 
