@@ -1,8 +1,9 @@
-import { StyleSheet, Text, type TextProps } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import { useTheme } from '@rneui/themed';
+import { type TextProps as RNTextProps } from '@rneui/base/dist/Text/Text';
+import { Text, useTheme } from '@rneui/themed';
 
-export type ThemedTextProps = TextProps & {
+export type ThemedTextProps = {
   lightColor?: string;
   darkColor?: string;
   inverted?: boolean;
@@ -13,7 +14,7 @@ export type ThemedTextProps = TextProps & {
     | 'defaultSemiBold'
     | 'subtitle'
     | 'link';
-};
+} & RNTextProps;
 
 export function ThemedText({
   style,
@@ -30,7 +31,7 @@ export function ThemedText({
     <Text
       style={[
         { color: inverted ? theme.colors.textLight : theme.colors.textDark },
-        type === 'default' ? styles.default : undefined,
+      //   type === 'default' ? styles.default : undefined,
         type === 'title' ? styles.title : undefined,
         type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
         type === 'subtitle' ? styles.subtitle : undefined,
@@ -48,10 +49,10 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 24,
   },
-  default: {
-    fontSize: 16,
-    lineHeight: 24,
-  },
+//   default: {
+//     fontSize: 16,
+//     lineHeight: 24,
+//   },
   defaultSemiBold: {
     fontSize: 16,
     lineHeight: 24,

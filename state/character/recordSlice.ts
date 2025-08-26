@@ -14,7 +14,7 @@ const initialState: CharacterDto = {
 }
 
 const recordSlice = createSlice({
-	name: 'records',
+	name: 'recordsSlice',
 	initialState: initialState,
 	reducers: {
 		setInitialValue: (state, { payload }: PayloadAction<CharacterDto>) => {

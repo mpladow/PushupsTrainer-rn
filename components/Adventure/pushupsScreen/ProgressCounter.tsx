@@ -1,14 +1,15 @@
 import { ThemedText } from '@/components/ThemedText';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const ProgressCounter = ({ count }: { count: number }) => {
   return (
-    <View>
-      <ThemedText style={{ fontSize: 80 }} type="defaultSemiBold">
-        {count}
-      </ThemedText>
-    </View>
+    <ThemedText
+      style={{ fontSize: 80, lineHeight: 120 }}
+      type="defaultSemiBold"
+    >
+      {count}
+    </ThemedText>
   );
 };
 

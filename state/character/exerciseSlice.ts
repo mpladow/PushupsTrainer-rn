@@ -11,9 +11,10 @@ const initialSlice: ExerciseSliceType = {
 }
 
 const exerciseSlice = createSlice({
-	name: 'exerciseSlice',
+	name: 'exercisesSlice',
 	initialState: initialSlice,
 	reducers: {
+		// sets the current exercise for the user to do for the day
 		setExercise: (state, action: PayloadAction<ExerciseDay>) => {
 			state.exercise = action.payload;
 		},
