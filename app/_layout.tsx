@@ -5,10 +5,11 @@ import 'react-native-reanimated';
 import { Provider } from 'react-redux';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { store } from '@/state/character/state';
+import { persistor, store } from '@/state/character/state';
 import { Colors } from '@/theme/Colors';
 import { createTheme, ThemeProvider } from '@rneui/themed';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { PersistGate } from 'redux-persist/integration/react';
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
@@ -56,25 +57,27 @@ export default function RootLayout() {
       textDark: '#ffffff',
     } as Colors,
     mode: 'dark',
-	 spacing: {
-		xs: 4,
-		sm: 8,
-		md: 12,
-		lg: 16,
-		xl: 24,
-	 }
+    spacing: {
+      xs: 4,
+      sm: 8,
+      md: 12,
+      lg: 16,
+      xl: 24,
+    },
   });
 
   return (
     <SafeAreaProvider>
       <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <Stack initialRouteName="(tabs)">
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            <Stack.Screen name="+not-found" />
-          </Stack>
-          <StatusBar style="auto" />
-        </ThemeProvider>
+        <PersistGate persistor={persistor} loading={null}>
+          <ThemeProvider theme={theme}>
+            <Stack initialRouteName="(tabs)">
+              <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+              <Stack.Screen name="+not-found" />
+            </Stack>
+            <StatusBar style="auto" />
+          </ThemeProvider>
+        </PersistGate>
       </Provider>
     </SafeAreaProvider>
   );

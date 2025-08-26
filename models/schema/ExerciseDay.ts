@@ -5,3 +5,8 @@ export interface ExerciseDay {
 	day: number;
 	exercises: ExerciseRepGoal[];
 };
+
+export interface ExercisePlan {
+	exercisePlanId: string;
+	exerciseDays: ExerciseDay[];
+}

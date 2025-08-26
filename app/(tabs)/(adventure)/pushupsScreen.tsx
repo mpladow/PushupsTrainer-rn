@@ -15,7 +15,7 @@ const pushupsScreen = () => {
 
   // redux
   const exercise = useSelector((state: RootState) => {
-    return state.exerciseReducer.exercise;
+    return state.exercises.exercise;
   });
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
   const [countdownTimer, setCountdownTimer] = useState(1);
